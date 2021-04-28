@@ -1,1 +1,1 @@
-export { default } from './Component.svelte';
+export { default as NeatModal } from './components/NeatModal.svelte';
