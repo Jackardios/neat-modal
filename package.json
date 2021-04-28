@@ -1,5 +1,7 @@
 {
-  "name": "svelte-component",
+  "name": "neat-modal",
+  "version": "0.0.1",
+  "description": "Neat modals for svelte or vanilla js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
@@ -8,6 +10,15 @@
     "validate": "svelte-check",
     "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "svelte",
+    "es6",
+    "vanilla",
+    "neat",
+    "modal",
+    "accesible",
+    "plugin"
+  ],
   "files": [
     "src",
     "dist"
@@ -25,8 +36,5 @@
     "svelte-preprocess": "^4.7.2",
     "tslib": "^2.2.0",
     "typescript": "^4.2.4"
-  },
-  "keywords": [
-    "svelte"
-  ]
+  }
 }
