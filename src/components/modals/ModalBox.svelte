@@ -61,6 +61,10 @@
   class={clsx(classNames.modalBox, sizeClassNamesMapping[size], className)}
   use:clickAwayListener
   on:clickAway={closeOnClickAway && close}
+  tabindex="-1"
+  role="dialog"
+  aria-live="assertive"
+  aria-modal="true"
 >
   <slot />
 </div>
