@@ -4,15 +4,17 @@
   "description": "Neat modals for svelte or vanilla js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "types": "dist/ts/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "validate": "svelte-check",
+    "prebuild": "rm -rf ./dist",
     "prepublishOnly": "npm run build",
+    "prelint": "npm run format",
     "format": "prettier --write ./src/**/*.{js,svelte,html,ts}",
     "lint": "eslint './src/**/*.{js,ts,svelte}'",
-    "lint:fix": "eslint --fix './src/**/*.{js,ts,svelte}'",
-    "prelint": "npm run format"
+    "lint:fix": "eslint --fix './src/**/*.{js,ts,svelte}'"
   },
   "keywords": [
     "svelte",
@@ -20,6 +22,8 @@
     "vanilla",
     "neat",
     "modal",
+    "adaptive",
+    "responsive",
     "accesible",
     "plugin"
   ],
@@ -28,15 +32,20 @@
     "dist"
   ],
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-typescript": "^8.2.1",
     "@tsconfig/svelte": "^1.0.10",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^10.2.5",
     "eslint": "^7.25.0",
     "eslint-plugin-svelte3": "^3.2.0",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
+    "postcss-import": "^14.0.1",
+    "postcss-load-config": "^3.0.1",
+    "postcss-nested": "^5.0.5",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "rollup": "^2.45.2",
@@ -49,5 +58,9 @@
     "svelte-preprocess": "^4.7.2",
     "tslib": "^2.2.0",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "body-scroll-lock": "^3.1.5",
+    "clsx": "^1.1.1"
   }
 }
