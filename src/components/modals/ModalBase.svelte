@@ -50,8 +50,7 @@
 </style>
 
 <script lang="ts">
-  import { rootStore } from '../../stores/rootStore'
-  import { getModalsContainerContext } from '../ModalsContainer.svelte'
+  import { getModalsContainerContext } from '../modals-container/ModalsContainer.svelte'
   import { onMount } from 'svelte'
   import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 

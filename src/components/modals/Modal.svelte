@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { UID, ModalOptions } from '../types'
-  import TextModal from './TextModal.svelte'
-  import FormModal from './FormModal.svelte'
+  import type { ModalId, ModalOptions } from './types'
+  import DefaultModal from './DefaultModal.svelte'
 
-  export let id: UID
+  export let id: ModalId
   export let options: ModalOptions
 
-  const { type = 'text' } = options || {}
+  const { type = 'default' } = options || {}
 
   const mapping = {
-    text: TextModal,
-    form: FormModal
+    default: DefaultModal
+
+    // TODO: More components
   }
 </script>
 

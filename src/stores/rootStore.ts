@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store'
 import { Readable } from 'svelte/types/runtime/store'
-import { ModalProps, ModalOptions, UID } from '../components/types'
+import { ModalProps, ModalOptions, ModalId } from '../components/modals/types'
 
 interface RootStore<T> extends Readable<T> {
-  open(options: ModalOptions): UID
-  close(id: UID): void
+  open(options: ModalOptions): ModalId
+  close(id: ModalId): void
 }
 
 export type StoreValue = {

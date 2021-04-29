@@ -1,4 +1,5 @@
-import { ColorPalette, CssVars } from '../components/types'
+import { CssVars } from '../types'
+import { ColorPalette } from '../components/modals-container/types'
 
 export default function colorPaletteToCssVars(colorPalette: ColorPalette): CssVars {
   const cssVars: CssVars = {}

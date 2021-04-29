@@ -1,24 +1,24 @@
 <style global lang="postcss">
-  .neat-text-modal {
+  .neat-default-modal {
   }
 
-  .neat-text-modal__title {
+  .neat-default-modal__title {
   }
 
-  .neat-text-modal__content {
+  .neat-default-modal__content {
   }
 </style>
 
 <script lang="ts">
   import { rootStore } from '../../stores/rootStore'
-  import type { UID, TextModalOptions } from '../types'
+  import type { ModalId, DefaultModalOptions } from './types'
 
   import ModalBase from './ModalBase.svelte'
   import ModalBox from './ModalBox.svelte'
-  import { getModalsContainerContext } from '../ModalsContainer.svelte'
+  import { getModalsContainerContext } from '../modals-container/ModalsContainer.svelte'
 
-  export let id: UID
-  export let options: TextModalOptions | undefined
+  export let id: ModalId
+  export let options: DefaultModalOptions | undefined
 
   const { title = '', text = '', size = 'medium', closeOnClickAway, closeOnEscape } =
     options || {}

@@ -1,8 +1,14 @@
 <script context="module" lang="ts">
   import { getContext } from 'svelte'
-  import type { ModalsContainerContext } from './types'
+  import type { ClassNames } from './types'
 
   export const contextKey = {}
+
+  export type ModalsContainerContext =
+    | {
+        classNames: ClassNames
+      }
+    | undefined
 
   export function getModalsContainerContext(): ModalsContainerContext {
     return getContext(contextKey)
@@ -13,13 +19,13 @@
   import { onMount, setContext } from 'svelte'
   import type { ClassNames, ColorPalette } from './types'
   import { defaultClassNames, defaultColorPalette } from './defaults'
-  import { rootStore } from '../stores/rootStore'
+  import { rootStore } from '../../stores/rootStore'
 
-  import colorPaletteToCssVars from '../utils/colorPaletteToCssVars'
-  import cssVars from '../utils/cssVars'
-  import getScrollbarWidth from '../utils/getScrollbarWidth'
+  import colorPaletteToCssVars from '../../utils/colorPaletteToCssVars'
+  import cssVars from '../../utils/cssVars'
+  import getScrollbarWidth from '../../utils/getScrollbarWidth'
 
-  import Modal from './modals/Modal.svelte'
+  import Modal from './../modals/Modal.svelte'
 
   export let classNames: ClassNames = defaultClassNames
   export let colorPalette: ColorPalette = defaultColorPalette

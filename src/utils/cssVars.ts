@@ -1,4 +1,4 @@
-import { CssVars } from '../components/types'
+import { CssVars } from '../types'
 
 export default function cssVars(node: HTMLElement, cssVars: CssVars) {
   Object.entries(cssVars).forEach(([key, value]) => {

@@ -27,7 +27,7 @@
 
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
-  import { getModalsContainerContext } from '../ModalsContainer.svelte'
+  import { getModalsContainerContext } from '../modals-container/ModalsContainer.svelte'
   import clickAwayListener from '../../utils/clickAwayListener'
   import clsx from 'clsx'
 
