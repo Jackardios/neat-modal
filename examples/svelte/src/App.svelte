@@ -1,4 +1,7 @@
-<style>
+<style lang="postcss" global>
+  @import 'neat-modal/dist/styles/neat-modal.css';
+  @import 'neat-modal/dist/styles/neat-modal-theme-default.css';
+
   .root {
     display: flex;
     align-items: center;
@@ -56,11 +59,9 @@
 <script lang="ts">
   import { ModalsContainer, store } from 'neat-modal'
 
-  window.modalsStore = store
-
   const openModal = () => {
     store.open({
-      type: 'text',
+      size: 'small',
       title: '<i>This</i> example modal',
       content: `
           <h3>Lorem ipsum dolor sit amet</h3>
@@ -76,19 +77,7 @@
           eu pretium tortor imperdiet sed. Praesent quis sem id orci vulputate dictum ac quis purus.
           Sed finibus iaculis facilisis. Phasellus at arcu ac arcu viverra convallis. Suspendisse potenti.
           </p>
-          <p>
-          Vivamus elementum tincidunt lacus vel faucibus. Phasellus congue, risus sed gravida pharetra,
-          velit magna scelerisque quam, ut finibus velit sapien sit amet purus. In maximus malesuada leo,
-          ac feugiat justo tincidunt quis. Pellentesque vitae dictum lacus, eget molestie tellus. Morbi at ex
-          rhoncus, pellentesque arcu et, finibus nisi. Vestibulum iaculis tempus sapien, at gravida ligula laoreet ut.
-          Mauris blandit orci vitae ipsum accumsan rhoncus. Nunc condimentum nulla sit amet luctus ultricies.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-          Etiam nisl justo, tincidunt quis leo ut, aliquam ullamcorper elit. Etiam euismod ipsum sapien, id
-          luctus turpis ultricies gravida. Curabitur vel ante ligula. Suspendisse ornare iaculis mi, vitae hendrerit
-          ligula aliquet ut. Duis lacinia leo id tempor suscipit. Sed sit amet suscipit augue.
-          </p>
-          `,
-      size: 'small'
+          `
     })
   }
 </script>
