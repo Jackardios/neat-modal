@@ -18,7 +18,7 @@
 <script lang="ts">
   import { onMount, setContext } from 'svelte'
   import type { ClassNames, ColorPalette } from './types'
-  import { defaultClassNames, defaultColorPalette } from './defaults'
+  import { defaultColorPalette } from './defaults'
   import { rootStore } from '../../stores/rootStore'
 
   import colorPaletteToCssVars from '../../utils/colorPaletteToCssVars'
@@ -27,13 +27,9 @@
 
   import Modal from './../modals/Modal.svelte'
 
-  export let classNames: ClassNames = defaultClassNames
+  export let classNames: ClassNames = {}
   export let colorPalette: ColorPalette = defaultColorPalette
 
-  classNames = {
-    ...defaultClassNames,
-    ...classNames
-  }
   colorPalette = {
     ...defaultColorPalette,
     ...colorPalette

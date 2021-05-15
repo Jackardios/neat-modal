@@ -4,8 +4,10 @@ import sveltePreprocess from 'svelte-preprocess'
 import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 import execute from 'rollup-plugin-execute'
+import postcss from 'rollup-plugin-postcss'
 
 import pkg from './package.json'
+const isProduction = !process.env.ROLLUP_WATCH
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -34,10 +36,7 @@ export default [
     ],
     plugins: [
       svelte({
-        emitCss: false,
-        preprocess: sveltePreprocess({
-          postcss: true
-        })
+        preprocess: sveltePreprocess()
       }),
       resolve({
         browser: true,
@@ -45,6 +44,32 @@ export default [
       }),
       commonjs(),
       typescript()
+    ]
+  },
+  {
+    input: 'src/styles/common/index.css',
+    output: {
+      file: 'dist/styles/neat-modal.css',
+      format: 'es'
+    },
+    plugins: [
+      postcss({
+        extract: true,
+        minimize: isProduction
+      })
+    ]
+  },
+  {
+    input: 'src/styles/themes/default/index.css',
+    output: {
+      file: 'dist/styles/neat-modal-theme-default.css',
+      format: 'es'
+    },
+    plugins: [
+      postcss({
+        extract: true,
+        minimize: isProduction
+      })
     ]
   }
 ]

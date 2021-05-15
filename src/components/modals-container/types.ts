@@ -7,8 +7,11 @@ export type ClassNames = {
   modalBoxMedium?: string
   modalBoxLarge?: string
 
-  formModal?: string
-  textModal?: string
+  defaultModal?: string
+  defaultModalHeader?: string
+  defaultModalTitle?: string
+  defaultModalCloseButton?: string
+  defaultModalContent?: string
 }
 
 export type ColorPalette = {

@@ -1,17 +1,4 @@
-import { ClassNames, ColorPalette } from './types'
-
-export const defaultClassNames: ClassNames = {
-  modalBase: 'neat-modal-base',
-  modalBaseInner: 'neat-modal-base__inner',
-
-  modalBox: 'neat-modal-box',
-  modalBoxSmall: 'neat-modal-box--small',
-  modalBoxMedium: 'neat-modal-box--medium',
-  modalBoxLarge: 'neat-modal-box--large',
-
-  formModal: 'neat-form-modal',
-  textModal: 'neat-text-modal'
-}
+import { ColorPalette } from './types'
 
 export const defaultColorPalette: ColorPalette = {
   primary: {
