@@ -4,7 +4,7 @@
     display: inline-block;
     padding: 0.75rem 1.75rem;
     appearance: none;
-    background: #d4d4d8;
+    background: #e4e4e7;
     border: none;
     border-radius: 0.25rem;
     font-weight: 500;
@@ -14,20 +14,12 @@
 
     &:focus,
     &:hover {
-      background: #e4e4e7;
-      transform: scale(1.1) translateZ(0);
-
-      svg {
-        transform: scale(0.9) translateZ(0);
-      }
+      background: #d4d4d8;
+      transform: scale(1.075) translateZ(0);
     }
 
     &:active {
-      transform: scale(0.9) translateZ(0);
-
-      svg {
-        transform: scale(1) translateZ(0);
-      }
+      transform: scale(0.925) translateZ(0);
     }
   }
 </style>

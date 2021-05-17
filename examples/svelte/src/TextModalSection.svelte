@@ -22,7 +22,7 @@
           banded killifish lake chub tenuis lampfish, armored gurnard Bitterling.
           Saber-toothed blenny elasmobranch, yellowfin tuna clownfish beaked salmon.
           Lenok, blackchin galjoen fish false moray Atlantic salmon sarcastic fringehead.</p>
-          `
+      `
     })
   }
 </script>
@@ -32,5 +32,5 @@
   <svelte:fragment slot="description">
     Click on this button to open the default modal with fish text
   </svelte:fragment>
-  <Button slot="button" on:click={openTextModal}>Open</Button>
+  <Button slot="button" on:click={openTextModal}>Open text modal</Button>
 </Section>

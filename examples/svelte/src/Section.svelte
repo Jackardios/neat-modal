@@ -24,9 +24,9 @@
 
 <section class="section">
   <div class="container">
-    <h1 class="section__title">
+    <h2 class="section__title">
       <slot name="title" />
-    </h1>
+    </h2>
     <div class="section__description"><slot name="description" /></div>
     <div class="section__button-container">
       <slot name="button" />
