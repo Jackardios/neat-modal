@@ -2,8 +2,9 @@
   "name": "neat-modal",
   "version": "0.0.1",
   "description": "Neat modals for svelte or vanilla js",
+  "svelte": "dist/index.js",
   "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "types": "dist/ts/index.d.ts",
   "scripts": {
     "build": "rollup -c",
@@ -62,6 +63,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "svelte-focus-trap": "^1.2.0"
   }
 }
