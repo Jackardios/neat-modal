@@ -1,12 +1,13 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
-  import { getModalsContainerContext } from '../../modals-container/ModalsContainer.svelte'
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
   import { quadOut } from 'svelte/easing'
+  import { focusTrap } from 'svelte-focus-trap'
   import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
   import clsx from 'clsx'
 
+  import { getModalsContainerContext } from '../../modals-container/ModalsContainer.svelte'
   const { classNames } = getModalsContainerContext()
 
   let modalBaseRoot
@@ -36,6 +37,7 @@
       ? ['neat-modal-base--with-backdrop', classNames.modalBaseWithBackdrop]
       : [])
   ])}
+  use:focusTrap
   transition:fade={{ duration: 240, easing: quadOut }}
   style="z-index: {zIndex}"
 >
