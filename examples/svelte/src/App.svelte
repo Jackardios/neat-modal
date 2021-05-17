@@ -44,7 +44,6 @@
     background-color: #f4f4f5;
 
     @media (min-width: 720px) {
-      font-size: 2rem;
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
@@ -60,37 +59,40 @@
     }
   }
 
+  .header-links {
+    display: flex;
+    justify-content: center;
+    margin: 0.25rem -0.5rem;
+    &__item {
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      margin: 0.5rem;
+      font-size: 0.875rem;
+      text-decoration: none;
+      border-radius: 0.25rem;
+      background-color: #e4e4e7;
+      color: #222222;
+      transform: scale(1) translateZ(0);
+      transition: all 300ms ease;
+
+      &:focus,
+      &:hover {
+        background-color: #d4d4d8;
+        transform: scale(1.075) translateZ(0);
+      }
+
+      &:active {
+        transform: scale(0.925) translateZ(0);
+      }
+    }
+  }
+
   .brand {
     font-weight: bold;
     color: #3b82f6;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-  }
-
-  .link {
-    position: relative;
-    display: inline-block;
-    color: inherit;
-    opacity: 0.75;
-    color: rgb(59, 130, 246);
-    text-decoration: none;
-    transition: opacity 300ms ease;
-
-    &:hover {
-      opacity: 1;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background-color: rgba(59, 130, 246, 0.25);
-    }
   }
 </style>
 
@@ -110,14 +112,18 @@
           rel="noopener noreferrer">Neat-modal</a
         >
       </h1>
-      <p class="header__description">
+      <div class="header-links">
+        <a href="http://npmjs.com/package/neat-modal" class="header-links__item">NPM</a>
+        <a href="https://github.com/Jackardios/neat-modal/" class="header-links__item"
+          >Github</a
+        >
         <a
-          class="link"
-          href="https://svelte.dev/"
-          target="_blank"
-          rel="noopener noreferrer">Svelte 3</a
-        > examples
-      </p>
+          href="https://github.com/Jackardios/neat-modal/tree/master/examples"
+          class="header-links__item"
+        >
+          Sources
+        </a>
+      </div>
     </div>
   </header>
   <TextModalSection />
