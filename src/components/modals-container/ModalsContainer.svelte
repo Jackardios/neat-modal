@@ -67,9 +67,21 @@
       document.body.style.removeProperty('padding-right')
     }
   })
+
+  const handleKeyDown = event => {
+    if (event.key !== 'Escape') {
+      return
+    }
+
+    const topModal = rootStore.getTopModal()
+    if (topModal && topModal.options && !topModal.options.disableCloseOnEscape) {
+      rootStore.close(topModal.id)
+    }
+  }
 </script>
 
-<div use:cssVars={cssVariables}>
+<svelte:window on:keydown={handleKeyDown} />
+<div use:cssVars={cssVariables} class="neat-modal-modals-container">
   {#each $rootStore.modals as modal (modal.id)}
     <Modal {...modal} />
   {/each}

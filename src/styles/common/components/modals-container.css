@@ -1,0 +1,7 @@
+.neat-modal-modals-container {
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: border-box;
+  }
+}

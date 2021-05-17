@@ -6,14 +6,16 @@ export type ModalSize = 'small' | 'medium' | 'large'
 
 export type CommonModalOptions = {
   zIndex?: number
-  closeOnEscape?: boolean
-  closeOnClickAway?: boolean
+  disableCloseOnEscape?: boolean
+  disableCloseOnBackdropClick?: boolean
+  hideBackdrop?: boolean
 }
 
 export type DefaultModalOptions = CommonModalOptions & {
   type?: 'default'
   size?: ModalSize
   title?: string
+  description?: string
   content?: string
   formFields?: Array<FormField>
   onSubmit?(e: Event): any

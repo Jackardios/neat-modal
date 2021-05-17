@@ -1,0 +1,35 @@
+.neat-modal-close-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background-color: var(--neat-modal-gray-100);
+  color: var(--neat-modal-gray-900);
+  transform: scale(1) translateZ(0);
+  transition: background-color 300ms ease,
+  transform 300ms ease;
+
+  svg {
+    pointer-events: none;
+    transform: scale(1) translateZ(0);
+    transition: transform 300ms ease;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: var(--neat-modal-gray-200);
+    transform: scale(1.15) translateZ(0);
+
+    svg {
+      transform: scale(0.85) translateZ(0);
+    }
+  }
+
+  &:active {
+    transform: scale(0.85) translateZ(0);
+
+    svg {
+      transform: scale(1) translateZ(0);
+    }
+  }
+}

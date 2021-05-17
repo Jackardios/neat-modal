@@ -1,17 +1,24 @@
 export type ClassNames = {
   modalBase?: string
+  modalBaseWithBackdrop?: string
+  modalBaseBackdrop?: string
   modalBaseInner?: string
 
   modalBox?: string
   modalBoxSmall?: string
   modalBoxMedium?: string
   modalBoxLarge?: string
+  modalBoxFullwidth?: string
+  modalBoxHeader?: string
+  modalBoxHeaderTextContainer?: string
+  modalBoxHeaderButtonContainer?: string
+  modalBoxHeaderTitle?: string
+  modalBoxHeaderDescription?: string
+  modalBoxContent?: string
+
+  modalCloseButton?: string
 
   defaultModal?: string
-  defaultModalHeader?: string
-  defaultModalTitle?: string
-  defaultModalCloseButton?: string
-  defaultModalContent?: string
 }
 
 export type ColorPalette = {

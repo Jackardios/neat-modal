@@ -1,0 +1,48 @@
+.neat-modal-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+
+  &--small {
+    max-width: 480px;
+  }
+
+  &--medium {
+    max-width: 640px;
+  }
+
+  &--large {
+    max-width: 720px;
+  }
+
+  &--fullwidth {
+    max-width: 100%;
+  }
+}
+
+.neat-modal-box-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.neat-modal-box-header__text-container {
+  flex: 1 1 0%;
+}
+
+.neat-modal-box-header__title {
+
+}
+
+.neat-modal-box-header__description {
+
+}
+
+.neat-modal-box-header__button-container {
+  flex: none;
+}
+
+.neat-modal-box__content {
+
+}

@@ -1,0 +1,25 @@
+.neat-modal-box {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.neat-modal-box-header {
+}
+
+.neat-modal-box-header__title {
+  font-size: 1.25rem;
+}
+
+.neat-modal-box-header__description {
+  font-size: 0.875rem;
+  color: var(--neat-modal-gray-500);
+  margin-top: 0.5rem;
+}
+
+.neat-modal-box__content {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}

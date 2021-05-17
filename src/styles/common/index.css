@@ -1,0 +1,5 @@
+@import "./components/modals/common/modal-base.css";
+@import "./components/modals/common/modal-box.css";
+@import "./components/modals/common/modal-close-button.css";
+@import "./components/modals/default-modal.css";
+@import "./components/modals-container.css";
