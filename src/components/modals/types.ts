@@ -9,6 +9,8 @@ export type CommonModalOptions = {
   disableCloseOnEscape?: boolean
   disableCloseOnBackdropClick?: boolean
   hideBackdrop?: boolean
+  onMount?(modalProps: ModalProps): any
+  onDestroy?(modalProps: ModalProps): any
 }
 
 export type DefaultModalOptions = CommonModalOptions & {
