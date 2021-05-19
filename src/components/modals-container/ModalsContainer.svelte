@@ -19,33 +19,7 @@
     ...defaultColorPalette,
     ...colorPalette
   }
-  let cssVariables = {}
-
-  onMount(() => {
-    cssVariables = {
-      'neat-modal-scrollbar-width': `${getScrollbarWidth()}px`,
-      ...colorPaletteToCssVars(colorPalette)
-    }
-
-    return () => {
-      document.body.style.removeProperty('padding-right')
-    }
-  })
-
-  rootStore.subscribe(currentStore => {
-    if (currentStore.modals && currentStore.modals.length) {
-      const scrollbarWidth = getScrollbarWidth()
-      cssVariables = {
-        ...cssVariables,
-        'neat-modal-scrollbar-width': `${scrollbarWidth}px`
-      }
-      if (scrollbarWidth > 0) {
-        document.body.style.paddingRight = `${scrollbarWidth}px`
-      }
-    } else {
-      document.body.style.removeProperty('padding-right')
-    }
-  })
+  let cssVariables = colorPaletteToCssVars(colorPalette)
 
   const handleKeyDown = event => {
     if (event.key !== 'Escape') {
