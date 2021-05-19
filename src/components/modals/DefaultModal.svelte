@@ -14,9 +14,9 @@
   export let options: DefaultModalOptions | undefined
 
   const {
-    title,
-    description,
-    content,
+    title = '',
+    description = '',
+    content = '',
     size,
     disableCloseOnBackdropClick,
     hideBackdrop,
