@@ -1,5 +1,6 @@
-import { FormField } from '../form-fields/types'
-import { Override } from '../../types'
+import type { FormField } from '../form-fields/types'
+import type { Override } from '../../types'
+import type { SimpleDOMSelector } from '../../utils/convertToArrayOfHTMLElements'
 
 export type ModalId = number
 export type ModalSize = 'small' | 'medium' | 'large'
@@ -19,6 +20,11 @@ export type ModalButton = {
   onMount?(modalButtonHTMLElement: HTMLElement): any
   onDestroy?(modalButtonHTMLElement: HTMLElement): any
 }
+export type ModalScrollbarCompensationOptions =
+  | boolean
+  | {
+      targetElements: SimpleDOMSelector
+    }
 
 export type CommonModalOptions = {
   type?: ModalType
@@ -31,6 +37,7 @@ export type CommonModalOptions = {
   disableCloseOnEscape?: boolean
   disableCloseOnBackdropClick?: boolean
   hideBackdrop?: boolean
+  scrollbarCompensation?: ModalScrollbarCompensationOptions
   formFields?: Array<FormField>
   buttons?: Array<ModalButton>
   onSubmit?(e: Event): any

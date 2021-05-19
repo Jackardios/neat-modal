@@ -6,5 +6,6 @@ export const defaultModalOptions: ModalOptions = {
   zIndex: 10000,
   disableCloseOnEscape: false,
   disableCloseOnBackdropClick: false,
-  hideBackdrop: false
+  hideBackdrop: false,
+  scrollbarCompensation: true
 }
