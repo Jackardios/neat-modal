@@ -1,20 +1,3 @@
-<script context="module" lang="ts">
-  import { getContext } from 'svelte'
-  import type { ClassNames } from './types'
-
-  export const contextKey = {}
-
-  export type ModalsContainerContext =
-    | {
-        classNames: ClassNames
-      }
-    | undefined
-
-  export function getModalsContainerContext(): ModalsContainerContext {
-    return getContext(contextKey)
-  }
-</script>
-
 <script lang="ts">
   import { onMount, setContext } from 'svelte'
   import type { ClassNames, ColorPalette } from './types'
@@ -30,16 +13,12 @@
   export let classNames: ClassNames = {}
   export let colorPalette: ColorPalette = defaultColorPalette
 
+  setContext('classNames', classNames)
+
   colorPalette = {
     ...defaultColorPalette,
     ...colorPalette
   }
-
-  const context: ModalsContainerContext = {
-    classNames
-  }
-  setContext(contextKey, context)
-
   let cssVariables = {}
 
   onMount(() => {

@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { getModalsContainerContext } from '../../modals-container/ModalsContainer.svelte'
+  import { getContext } from 'svelte'
   import clsx from 'clsx'
 
-  const { classNames } = getModalsContainerContext()
+  import type { ClassNames } from '../../modals-container/types'
+
+  const classNames: ClassNames = getContext('classNames')
 </script>
 
 <button

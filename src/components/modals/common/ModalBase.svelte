@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher, getContext } from 'svelte'
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
   import { quadOut } from 'svelte/easing'
@@ -7,22 +7,25 @@
   import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
   import clsx from 'clsx'
 
-  import { getModalsContainerContext } from '../../modals-container/ModalsContainer.svelte'
-  const { classNames } = getModalsContainerContext()
+  import type { ModalRootHTMLElement, SetModalRootHTMLElement } from '../types'
+  import type { ClassNames } from '../../modals-container/types'
 
-  let modalBaseRoot
-
-  onMount(() => {
-    disableBodyScroll(modalBaseRoot)
-
-    return () => {
-      enableBodyScroll(modalBaseRoot)
-    }
-  })
+  const classNames: ClassNames = getContext('classNames')
+  const setRootHTMLElement: SetModalRootHTMLElement = getContext('setRootHTMLElement')
 
   export let zIndex: number = 10000
   export let disableCloseOnBackdropClick: boolean = false
   export let hideBackdrop: boolean = false
+  let rootHTMLElement: ModalRootHTMLElement
+
+  onMount(() => {
+    setRootHTMLElement(rootHTMLElement)
+    disableBodyScroll(rootHTMLElement)
+
+    return () => {
+      enableBodyScroll(rootHTMLElement)
+    }
+  })
 
   const dispatch = createEventDispatcher()
   function close(event: Event) {
@@ -31,7 +34,7 @@
 </script>
 
 <div
-  bind:this={modalBaseRoot}
+  bind:this={rootHTMLElement}
   class={clsx('neat-modal-base', classNames.modalBase, [
     ...(!hideBackdrop
       ? ['neat-modal-base--with-backdrop', classNames.modalBaseWithBackdrop]

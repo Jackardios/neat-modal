@@ -10,6 +10,10 @@ interface RootStore<T> extends Readable<T> {
   open(options: ModalOptions): ModalId
   close(id: ModalId): void
   closeTopModal(): ModalId | undefined
+  info(options: ModalOptions): ModalId
+  success(options: ModalOptions): ModalId
+  warning(options: ModalOptions): ModalId
+  error(options: ModalOptions): ModalId
 }
 
 export type StoreValue = {
@@ -94,6 +98,34 @@ function createRootStore(): RootStore<StoreValue> {
         this.close(topModal.id)
         return topModal.id
       }
+    },
+
+    info(options) {
+      return this.open({
+        ...options,
+        theme: 'primary'
+      })
+    },
+
+    success(options) {
+      return this.open({
+        ...options,
+        theme: 'primary'
+      })
+    },
+
+    warning(options) {
+      return this.open({
+        ...options,
+        theme: 'warning'
+      })
+    },
+
+    error(options) {
+      return this.open({
+        ...options,
+        theme: 'error'
+      })
     }
   }
 }

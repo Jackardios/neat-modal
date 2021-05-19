@@ -1,15 +1,16 @@
 <script lang="ts">
+  import { getContext } from 'svelte'
   import { fly } from 'svelte/transition'
   import { quadOut } from 'svelte/easing'
-
-  import { getModalsContainerContext } from '../../modals-container/ModalsContainer.svelte'
   import clsx from 'clsx'
+
+  import type { ClassNames } from '../../modals-container/types'
 
   let className
   export { className as class }
   export let size = 'medium'
 
-  const { classNames } = getModalsContainerContext()
+  const classNames: ClassNames = getContext('classNames')
   const sizeClassNamesMapping = {
     small: clsx('neat-modal-box--small', classNames.modalBoxSmall),
     medium: clsx('neat-modal-box--medium', classNames.modalBoxMedium),
