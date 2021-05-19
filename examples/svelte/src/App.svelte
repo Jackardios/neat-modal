@@ -54,7 +54,8 @@
     }
 
     &__description {
-      font-size: 1.25rem;
+      font-size: 1rem;
+      color: #71717a;
       margin: 0.5rem 0 0 0;
     }
   }
@@ -62,7 +63,7 @@
   .header-links {
     display: flex;
     justify-content: center;
-    margin: 0.25rem -0.5rem;
+    margin: 0.5rem -0.5rem -0.5rem -0.5rem;
     &__item {
       cursor: pointer;
       padding: 0.25rem 0.5rem;
@@ -99,6 +100,7 @@
 <script lang="ts">
   import { ModalsContainer } from 'neat-modal'
   import TextModalSection from './TextModalSection.svelte'
+  import SuccessModalSection from './SuccessModalSection.svelte'
 </script>
 
 <main class="root">
@@ -112,6 +114,7 @@
           rel="noopener noreferrer">Neat-modal</a
         >
       </h1>
+      <div class="header__description">Neat modals for svelte or vanilla js</div>
       <div class="header-links">
         <a href="http://npmjs.com/package/neat-modal" class="header-links__item">NPM</a>
         <a href="https://github.com/Jackardios/neat-modal/" class="header-links__item"
@@ -127,5 +130,6 @@
     </div>
   </header>
   <TextModalSection />
+  <SuccessModalSection />
 </main>
 <ModalsContainer />

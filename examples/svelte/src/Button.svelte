@@ -21,6 +21,15 @@
     &:active {
       transform: scale(0.925) translateZ(0);
     }
+
+    &--success {
+    }
+
+    &--warning {
+    }
+
+    &--error {
+    }
   }
 </style>
 
