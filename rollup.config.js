@@ -1,3 +1,4 @@
+import path from 'path'
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
 import sveltePreprocess from 'svelte-preprocess'
@@ -14,9 +15,31 @@ const name = pkg.name
   .replace(/^\w/, m => m.toUpperCase())
   .replace(/-\w/g, m => m[1].toUpperCase())
 
+const onwarn = (warning, rollupWarn) => {
+  const ignoredWarnings = [
+    {
+      ignoredCode: 'CIRCULAR_DEPENDENCY',
+      ignoredPath: 'src/'
+    }
+  ]
+
+  // only show warning when code and path don't match
+  // anything in above list of ignored warnings
+  if (
+    !ignoredWarnings.some(
+      ({ ignoredCode, ignoredPath }) =>
+        warning.code === ignoredCode &&
+        warning.importer.includes(path.normalize(ignoredPath))
+    )
+  ) {
+    rollupWarn(warning)
+  }
+}
+
 export default [
   {
     input: 'src/index.ts',
+    onwarn,
     output: [
       {
         file: pkg.module,
