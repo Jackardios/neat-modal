@@ -5,10 +5,16 @@ import type { SimpleDOMSelector } from '../../utils/convertToArrayOfHTMLElements
 export type ModalId = number
 export type ModalSize = 'small' | 'medium' | 'large'
 export type ModalType = 'default'
-export type ModalTheme = 'default' | 'primary' | 'success' | 'warning' | 'error'
+export type ModalTheme = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'
 
 export type ModalButtonType = 'button' | 'submit' | 'reset' | 'close' | 'link'
-export type ModalButtonTheme = 'default' | 'primary' | 'success' | 'warning' | 'error'
+export type ModalButtonTheme =
+  | 'default'
+  | 'primary'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error'
 export type ModalButtonAttribute = {
   [key: string]: string
 }
@@ -38,9 +44,12 @@ export type CommonModalOptions = {
   disableCloseOnBackdropClick?: boolean
   hideBackdrop?: boolean
   scrollbarCompensation?: ModalScrollbarCompensationOptions
-  formFields?: Array<FormField>
+  form?: {
+    fields: Array<FormField>
+    onMount(modalFormHTMLElement: HTMLElement): any
+    onDestroy(modalFormHTMLElement: HTMLElement): any
+  }
   buttons?: Array<ModalButton>
-  onSubmit?(e: Event): any
   onMount?(modalHTMLElement: HTMLElement | undefined, modalProps: ModalProps): any
   onDestroy?(modalHTMLElement: HTMLElement | undefined, modalProps: ModalProps): any
 }

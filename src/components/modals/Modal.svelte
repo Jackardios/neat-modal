@@ -22,6 +22,7 @@
     rootHTMLElement = newRootHTMLElement
   }
   setContext('setRootHTMLElement', setRootHTMLElement)
+  setContext('modalId', id)
 
   onMount(function () {
     if (options.onMount) {

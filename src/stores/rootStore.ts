@@ -103,14 +103,14 @@ function createRootStore(): RootStore<StoreValue> {
     info(options) {
       return this.open({
         ...options,
-        theme: 'primary'
+        theme: 'info'
       })
     },
 
     success(options) {
       return this.open({
         ...options,
-        theme: 'primary'
+        theme: 'success'
       })
     },
 

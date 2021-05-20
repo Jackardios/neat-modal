@@ -101,6 +101,10 @@
   import { ModalsContainer } from 'neat-modal'
   import TextModalSection from './TextModalSection.svelte'
   import SuccessModalSection from './SuccessModalSection.svelte'
+  import WarningModalSection from './WarningModalSection.svelte'
+  import ErrorModalSection from './ErrorModalSection.svelte'
+  import InfoModalSection from './InfoModalSection.svelte'
+  import NestedModalSection from './NestedModalSection.svelte'
 </script>
 
 <main class="root">
@@ -130,6 +134,10 @@
     </div>
   </header>
   <TextModalSection />
+  <NestedModalSection />
+  <InfoModalSection />
   <SuccessModalSection />
+  <WarningModalSection />
+  <ErrorModalSection />
 </main>
 <ModalsContainer />

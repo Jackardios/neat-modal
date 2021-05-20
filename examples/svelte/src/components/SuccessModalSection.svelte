@@ -2,13 +2,15 @@
   import { store } from 'neat-modal'
   import Section from './Section.svelte'
   import Button from './Button.svelte'
+  import { lorem, loremHTML } from '../utils/lorem'
 
   window.store = store
-  const openTextModal = () => {
+  const openModal = () => {
     store.success({
       size: 'small',
       title: 'Success',
-      description: 'Cardinalfish Pacific herring wrymouth'
+      description: lorem.generateSentences(1),
+      content: loremHTML.generateParagraphs(2)
     })
   }
 </script>
@@ -18,5 +20,5 @@
   <svelte:fragment slot="description">
     Click on this button to open the success modal with fish text
   </svelte:fragment>
-  <Button slot="button" on:click={openTextModal}>Open text modal</Button>
+  <Button slot="button" on:click={openModal}>Open success modal</Button>
 </Section>

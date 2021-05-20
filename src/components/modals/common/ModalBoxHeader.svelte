@@ -4,6 +4,8 @@
 
   import type { ClassNames } from '../../modals-container/types'
 
+  export let title
+
   const classNames: ClassNames = getContext('classNames')
 </script>
 
